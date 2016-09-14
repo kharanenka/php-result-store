@@ -1,0 +1,26 @@
+{
+  "name": "kharanenka/result",
+  "description": "Generation universal response",
+  "license": "GPL-3.0",
+  "keywords": [
+    "php",
+    "result"
+  ],
+  "authors": [
+    {
+      "name": "Andrey Kharanenka",
+      "email": "kharanenka@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5"
+  },
+  "autoload": {
+    "classmap": [
+      "src/Kharanenka/Helper"
+    ],
+    "psr-0": {
+      "Kharanenka\\Result\\": "src/"
+    }
+  }
+}
