@@ -15,7 +15,7 @@ class ResultStore {
      * Status of result (true|false)
      * @var bool
      */
-    private $bResult = false;
+    private $bResult = true;
 
     /**
      * Data of result
