@@ -8,7 +8,9 @@ Generation universal response:
 Require this package in your `composer.json` and update composer.
  
 ```php
+
 "kharanenka/result": "1.0.*"
+
 ```
 
 # Usage
@@ -16,6 +18,7 @@ Require this package in your `composer.json` and update composer.
 You can use class "Result" in any places your application. Class "Result" is singleton.
 
 ```php
+
     use Kharanenka\Helper\Result;
     
     //Check errors
@@ -47,4 +50,5 @@ You can use class "Result" in any places your application. Class "Result" is sin
             return Result::setFalse($sMessage);
         }
     }
+    
 ```
