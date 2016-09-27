@@ -69,7 +69,7 @@ class ResultStore {
     /**
      * @return bool
      */
-    public function result() {
+    public function flag() {
         return $this->bResult;
     }
 

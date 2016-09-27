@@ -9,7 +9,7 @@
  *
  * @method static ResultStore setTrue(mixed $obData = null)
  * @method static ResultStore setFalse(mixed $obData = null)
- * @method static bool result()
+ * @method static bool flag()
  * @method static mixed data()
  * @method static array get()
  * @method static string getJSON()
