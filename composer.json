@@ -1,10 +1,11 @@
 {
-  "name": "kharanenka/php-universal-response",
-  "description": "Generation universal response",
+  "name": "kharanenka/php-result-store",
+  "description": "Universal result store",
   "license": "GPL-3.0",
   "keywords": [
     "php",
-    "response"
+    "result",
+    "store"
   ],
   "authors": [
     {

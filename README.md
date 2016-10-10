@@ -1,8 +1,8 @@
 # Class Result
 
-Generation universal response:
- - result (bool)
- - data: (bool | number | string | array | object)
+Universal result store:
+ - flag (bool)
+ - data (bool | number | string | array | object)
  
 #Installation
 Require this package in your `composer.json` and update composer.
@@ -20,6 +20,9 @@ You can use class "Result" in any places your application. Class "Result" is sin
 ```php
 
     use Kharanenka\Helper\Result;
+    
+    //Method Result::flag() return false
+    //Method Result::data() return 'Error message text'
     
     //Check errors
     if($bHasError) {
@@ -45,9 +48,12 @@ You can use class "Result" in any places your application. Class "Result" is sin
     
     ...
     function check() {
+    
+        ...
+    
         if($bHasError) {
             $sMessage = 'Error message text';
-            return Result::setFalse($sMessage);
+            Result::setFalse($sMessage);
         }
     }
     
