@@ -13,7 +13,7 @@
       "email": "kharanenka@gmail.com"
     }
   ],
-  "version": "1.0.3",
+  "version": "1.0.4",
   "require": {
     "php": ">=5.5"
   },
