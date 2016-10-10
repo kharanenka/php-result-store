@@ -9,7 +9,7 @@ Require this package in your `composer.json` and update composer.
  
 ```php
 
-"kharanenka/result": "1.0.*"
+"kharanenka/php-result-store": "1.0.*"
 
 ```
 
