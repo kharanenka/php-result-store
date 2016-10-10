@@ -1,10 +1,10 @@
 {
-  "name": "kharanenka/result",
+  "name": "kharanenka/php-universal-response",
   "description": "Generation universal response",
   "license": "GPL-3.0",
   "keywords": [
     "php",
-    "result"
+    "response"
   ],
   "authors": [
     {
@@ -12,7 +12,7 @@
       "email": "kharanenka@gmail.com"
     }
   ],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "require": {
     "php": ">=5.5"
   },
