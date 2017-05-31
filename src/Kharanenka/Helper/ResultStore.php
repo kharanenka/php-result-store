@@ -9,19 +9,19 @@
  *
  */
 
-class ResultStore {
+class ResultStore
+{
+    /** @var bool Status of result (true|false) */
+    private $bStatus = true;
 
-    /**
-     * Status of result (true|false)
-     * @var bool
-     */
-    private $bResult = true;
-
-    /**
-     * Data of result
-     * @var mixed
-     */
+    /** @var mixed Data of result */
     private $obData;
+    
+    /** @var string Error message */
+    private $sErrorMessage = null;
+
+    /** @var string Error code */
+    private $sErrorCode = null;
 
     /** @var ResultStore */
     private static $obThis =  null;
@@ -31,8 +31,8 @@ class ResultStore {
     /**
      * @return ResultStore
      */
-    public static function getInstance() {
-
+    public static function getInstance()
+    {
         if(empty(self::$obThis)) {
             self::$obThis = new ResultStore();
         }
@@ -41,62 +41,109 @@ class ResultStore {
     }
 
     /**
-     * Set status of result in true
-     * Set data of result
+     * Set data value and status of result in true
      * @param mixed $obData
      * @return ResultStore
      */
-    public function setTrue($obData = null) {
-
-        $this->bResult  = true;
+    public function setTrue($obData = null)
+    {
+        $this->bStatus  = true;
         $this->obData = $obData;
         return $this;
     }
 
     /**
-     * Set status of result in false
-     * Set data of result
+     * Set data value and status of result in false
      * @param mixed $obData
      * @return ResultStore
      */
-    public function setFalse($obData = null) {
-
-        $this->bResult  = false;
+    public function setFalse($obData = null)
+    {
+        $this->bStatus  = false;
         $this->obData = $obData;
         return $this;
     }
 
+    /**
+     * Set error message value
+     * @param string $sMessage
+     * @return ResultStore
+     */
+    public function setMessage($sMessage)
+    {
+        $this->bStatus  = false;
+        $this->sErrorMessage = $sMessage;
+        return $this;
+    }
+    
+    /**
+     * Set error code value
+     * @param string $sCode
+     * @return ResultStore
+     */
+    public function setCode($sCode) {
+
+        $this->bStatus  = false;
+        $this->sErrorCode = $sCode;
+        return $this;
+    }
+    
     /**
      * @return bool
      */
-    public function flag() {
-        return $this->bResult;
+    public function status()
+    {
+        return $this->bStatus;
+    }
+    
+    /**
+     * @return string
+     */
+    public function message()
+    {
+        return $this->sErrorMessage;
+    }
+    /**
+     * @return string
+     */
+    public function code()
+    {
+        return $this->sErrorCode;
     }
 
     /**
      * @return mixed
      */
-    public function data() {
+    public function data()
+    {
         return $this->obData;
     }
 
     /**
+     * Get result array
      * @return array
      */
-    public function get() {
-
-        return [
-            'result' => $this->bResult,
-            'data'   => $this->obData,
+    public function get()
+    {
+        $arResult = [
+            'status' => $this->status(),
+            'data'   => $this->data(),
         ];
-
+        
+        if(!$this->status()) {
+            $arResult['message'] = $this->message();
+            $arResult['code'] = $this->code();
+        }
+        
+        return $arResult;
     }
 
     /**
      * Generate result JSON string
      * @return string
      */
-    public function getJSON() {
+    public function getJSON()
+    {
         return json_encode($this->get());
     }
 }

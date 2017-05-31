@@ -9,14 +9,18 @@
  *
  * @method static ResultStore setTrue(mixed $obData = null)
  * @method static ResultStore setFalse(mixed $obData = null)
- * @method static bool flag()
+ * @method static ResultStore setMessage(string $sMessage)
+ * @method static ResultStore setCode(string $sCode)
+ * @method static bool status()
  * @method static mixed data()
+ * @method static string message()
+ * @method static string code()
  * @method static array get()
  * @method static string getJSON()
  */
 
-class Result {
-
+class Result
+{
     public static function __callStatic($sMethodName, $arArguments)
     {
         $obResult = ResultStore::getInstance();
