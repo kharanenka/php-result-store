@@ -3,13 +3,15 @@
 Universal result store:
  - status (bool)
  - data (mixed)
+ - message (string)
+ - code (string)
  
 #Installation
 Require this package in your `composer.json` and update composer.
  
 ```php
 
-"kharanenka/php-result-store": "2.0.*"
+"kharanenka/php-result-store": "2.1.*"
 
 ```
 
@@ -20,14 +22,14 @@ You can use class "Result" in any places your application. Class "Result" is sin
 ## Set result data methods:
   - setTrue(mixed $obData = null) - Set result data with status "true"
   - setFalse(mixed $obData = null) - Set result data with status "false"
-  - setMessage(string $sMessage) - Set error message with status "false"
-  - setCode(string $sCode) - Set error code with status "false"
+  - setMessage(string $sMessage) - Set message string
+  - setCode(string $sCode) - Set code value
 
 ## Get result data method:
   - status() - Get result status flag true/false
   - data() - Get data value (object/array/string)
-  - message() - Get error message value
-  - code() - Get error code value
+  - message() - Get message value
+  - code() - Get code value
   - get() - Get array result array
   - getJSON() - Get array result array in JSON string
   
@@ -37,14 +39,14 @@ You can use class "Result" in any places your application. Class "Result" is sin
     [
         'status'    => false/true
         'data'      => object
-        'message'   => 'Error message text',
+        'message'   => 'Message text',
         'code'      => 1015,
     ]
 ```
 
 ```php
     //Example 1
-    Result::setMessage('Error')->setCode(400);
+    Result::setMessage('Error')->setCode(400)->setFalse();
     
     ...
     if(!Result::status()) {

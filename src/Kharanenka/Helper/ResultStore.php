@@ -5,7 +5,7 @@
  *
  * Class ResultStore
  * @package Kharanenka\Helper
- * @author Andrey Kharanenka, kharanenka@gmail.com
+ * @author  Andrey Kharanenka, kharanenka@gmail.com
  *
  */
 
@@ -16,7 +16,7 @@ class ResultStore
 
     /** @var mixed Data of result */
     private $obData;
-    
+
     /** @var string Error message */
     private $sErrorMessage = null;
 
@@ -24,16 +24,18 @@ class ResultStore
     private $sErrorCode = null;
 
     /** @var ResultStore */
-    private static $obThis =  null;
+    private static $obThis = null;
 
-    private function __construct() {}
+    private function __construct()
+    {
+    }
 
     /**
      * @return ResultStore
      */
     public static function getInstance()
     {
-        if(empty(self::$obThis)) {
+        if (empty(self::$obThis)) {
             self::$obThis = new ResultStore();
         }
 
@@ -47,7 +49,7 @@ class ResultStore
      */
     public function setTrue($obData = null)
     {
-        $this->bStatus  = true;
+        $this->bStatus = true;
         $this->obData = $obData;
         return $this;
     }
@@ -59,7 +61,7 @@ class ResultStore
      */
     public function setFalse($obData = null)
     {
-        $this->bStatus  = false;
+        $this->bStatus = false;
         $this->obData = $obData;
         return $this;
     }
@@ -71,23 +73,21 @@ class ResultStore
      */
     public function setMessage($sMessage)
     {
-        $this->bStatus  = false;
         $this->sErrorMessage = $sMessage;
         return $this;
     }
-    
+
     /**
      * Set error code value
      * @param string $sCode
      * @return ResultStore
      */
-    public function setCode($sCode) {
-
-        $this->bStatus  = false;
+    public function setCode($sCode)
+    {
         $this->sErrorCode = $sCode;
         return $this;
     }
-    
+
     /**
      * @return bool
      */
@@ -95,7 +95,7 @@ class ResultStore
     {
         return $this->bStatus;
     }
-    
+
     /**
      * @return string
      */
@@ -103,6 +103,7 @@ class ResultStore
     {
         return $this->sErrorMessage;
     }
+
     /**
      * @return string
      */
@@ -126,15 +127,12 @@ class ResultStore
     public function get()
     {
         $arResult = [
-            'status' => $this->status(),
-            'data'   => $this->data(),
+            'status'  => $this->status(),
+            'data'    => $this->data(),
+            'message' => $this->message(),
+            'code'    => $this->code(),
         ];
-        
-        if(!$this->status()) {
-            $arResult['message'] = $this->message();
-            $arResult['code'] = $this->code();
-        }
-        
+
         return $arResult;
     }
 
