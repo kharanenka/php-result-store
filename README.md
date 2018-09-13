@@ -11,7 +11,7 @@ Require this package in your `composer.json` and update composer.
  
 ```php
 
-"kharanenka/php-result-store": "2.1.*"
+"kharanenka/php-result-store": "2.2.*"
 
 ```
 
@@ -20,6 +20,7 @@ Require this package in your `composer.json` and update composer.
 You can use class "Result" in any places your application. Class "Result" is singleton.
 
 ## Set result data methods:
+  - setData(mixed $obData) - Set result data
   - setTrue(mixed $obData = null) - Set result data with status "true"
   - setFalse(mixed $obData = null) - Set result data with status "false"
   - setMessage(string $sMessage) - Set message string

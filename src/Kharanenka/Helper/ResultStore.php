@@ -6,9 +6,7 @@
  * Class ResultStore
  * @package Kharanenka\Helper
  * @author  Andrey Kharanenka, kharanenka@gmail.com
- *
  */
-
 class ResultStore
 {
     /** @var bool Status of result (true|false) */
@@ -47,10 +45,23 @@ class ResultStore
      * @param mixed $obData
      * @return ResultStore
      */
+    public function setData($obData)
+    {
+        $this->obData = $obData;
+
+        return $this;
+    }
+
+    /**
+     * Set data value and status of result in true
+     * @param mixed $obData
+     * @return ResultStore
+     */
     public function setTrue($obData = null)
     {
         $this->bStatus = true;
         $this->obData = $obData;
+
         return $this;
     }
 
@@ -63,6 +74,7 @@ class ResultStore
     {
         $this->bStatus = false;
         $this->obData = $obData;
+
         return $this;
     }
 
@@ -74,6 +86,7 @@ class ResultStore
     public function setMessage($sMessage)
     {
         $this->sErrorMessage = $sMessage;
+
         return $this;
     }
 
@@ -85,6 +98,7 @@ class ResultStore
     public function setCode($sCode)
     {
         $this->sErrorCode = $sCode;
+
         return $this;
     }
 

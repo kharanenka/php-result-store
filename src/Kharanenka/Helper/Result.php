@@ -7,6 +7,7 @@
  * @package Kharanenka\Helper
  * @author Andrey Kharanenka, kharanenka@gmail.com
  *
+ * @method static ResultStore setData(mixed $obData)
  * @method static ResultStore setTrue(mixed $obData = null)
  * @method static ResultStore setFalse(mixed $obData = null)
  * @method static ResultStore setMessage(string $sMessage)
