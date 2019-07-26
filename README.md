@@ -6,7 +6,7 @@ Universal result store:
  - message (string)
  - code (string)
  
-#Installation
+# Installation
 Require this package in your `composer.json` and update composer.
  
 ```php
