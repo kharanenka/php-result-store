@@ -17,12 +17,17 @@
   "require": {
     "php": ">=7.0"
   },
+  "require-dev": {
+    "phpunit/phpunit": "^6.5"
+  },
   "autoload": {
-    "classmap": [
-      "src/Kharanenka/Helper"
-    ],
-    "psr-0": {
-      "Kharanenka\\Result\\": "src/"
+    "psr-4": {
+      "Kharanenka\\Helper\\": "src/Kharanenka/Helper/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Kharanenka\\Helper\\Tests\\": "tests/Kharanenka/Helper/"
     }
   }
 }
