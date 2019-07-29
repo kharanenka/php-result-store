@@ -5,12 +5,11 @@ Universal result store:
  - data (mixed)
  - message (string)
  - code (string)
- 
+
 # Installation
 Require this package in your `composer.json` and update composer.
- 
-```php
 
+```
 "kharanenka/php-result-store": "2.2.*"
 
 ```
@@ -33,9 +32,8 @@ You can use class "Result" in any places your application. Class "Result" is sin
   - code() - Get code value
   - get() - Get array result array
   - getJSON() - Get array result array in JSON string
-  
-```php
 
+```php
     //Result array
     [
         'status'    => false/true
@@ -48,12 +46,12 @@ You can use class "Result" in any places your application. Class "Result" is sin
 ```php
     //Example 1
     Result::setMessage('Error')->setCode(400)->setFalse();
-    
+
     ...
     if(!Result::status()) {
         return Result::get();
     }
-    
+
     //Example 2
     return Result::setTrue($obData)->getJSON();
 ```
